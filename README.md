@@ -1,6 +1,12 @@
 # 课程查询使用手册
 
+## 简介
 
+这是一个用于 TJU 选课系统的查询程序，意义在于自动爬取选课列表
+
+并筛选出不会与固定课表上必修课程发生时间冲突的可选课程
+
+程序通过 python 实现，使用前注意配置环境
 
 ## 课程爬取
 
@@ -10,7 +16,7 @@
 
 或者清除search中cookie的值，将得到的cookie粘贴到 /conf/cookie.txt 中，程序会自动将txt中的cookie添加到变量
 
-如果想要清除search内的值，可以运行 util/initJSON.py
+如果想要清除search内的值，可以运行 util/initSearchJson.py
 
 程序会对search表单初始化
 
@@ -67,6 +73,13 @@
 ## 表格生成
 
 表格生成的主程序为 src/tableMain.py
+
+首先注意配置必修课程，配置文件为 conf/class.json
+
+参数中 1 代表有课，0 代表无课
+
+可通过 util/initClassJson.py 进行初始化
+
 
 
 表格生成有两种模式
